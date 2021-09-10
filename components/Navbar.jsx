@@ -3,7 +3,7 @@
 import { jsx, css } from '@emotion/react';
 import styled from '@emotion/styled';
 import Link from 'next/link';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { color } from '../styles/ui/color';
 import { HandlerContext } from './context/pokemonHandler';
 
@@ -29,9 +29,7 @@ const ContainerNav = css`
 `;
 
 export default function Navbar() {
-  const [pokeTotal, setPokeTotal] = useState(0);
   const { getTotal } = useContext(HandlerContext);
-  setPokeTotal(getTotal);
   return (
     <Nav>
       <div css={ContainerNav}>
@@ -44,7 +42,7 @@ export default function Navbar() {
           <a className="pocket">
             Bag
             (
-            {pokeTotal}
+            {getTotal()}
             )
           </a>
         </Link>
