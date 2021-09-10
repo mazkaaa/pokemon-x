@@ -33,3 +33,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+*.iml
+.idea/vcs.xml
+.idea/workspace.xml
