@@ -40,13 +40,9 @@ export const HandlerProvider = ({ children }) => {
     }
     return Object.values(getPokemons).flat().length;
   };
-  // eslint-disable-next-line consistent-return
+  // eslint-disable-next-line arrow-body-style
   const checkNickname = (data) => {
-    const pokemonList = JSON.parse(JSON.stringify(getPokemons));
-    // eslint-disable-next-line no-plusplus
-    for (let i = 0; i < 100; i++) {
-      return pokemonList.some((x) => x.nickname === data);
-    }
+    return Object.values(getPokemons).flat().some((x) => x.nickname === data);
   };
   return (
     <HandlerContext.Provider
